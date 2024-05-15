@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+</head>
+<body>
+<div class="text">
+    <h1>Escolha o Algoritmo:</h1>
+</div>
+<div class="colom1">
+    <input type="button" value="Notas" onclick="showForm('formNota')" class="button">
+    <input type="button" value="Idade" onclick="showForm('formIdade')" class="button">  
+    <input type="button" value="Salário" onclick="showForm('formSal')" class="button">
+    <input type="button" value="Par ou Impar" onclick="showForm('formPar')" class="button">
+</div>    
+<div class="colum2">
+    <input type="button" value="Valores" onclick="showForm('formVal')" class="button">
+    <input type="button" value="IMC" onclick="showForm('formImc')" class="button">
+    <input type="button" value="Custo" onclick="showForm('formCusto')" class="button">
+    <input type="button" value="Produtos" onclick="showForm('formProdutos')" class="button">
+</div>
+ 
+<form action="/conclusão/main.js" id="formNota" style="display: none;">
+    <label for="#">Diga as suas notas:</label>
+    <br>
+    <br>
+    <input type="text" name="Nota 01" id="nota_01" placeholder="Nota1" required>
+    <br>
+    <input type="text" name="Nota 02" id="nota_02" placeholder="Nota2" equired>
+    <br>
+    <input type="text" name="Nota 03" id="nota_03" placeholder="Nota3" required>
+    <br>
+    <input type="text" name="Nota 04" id="nota_04" placeholder="Nota4" required>
+    <br>
+    <div id="provaRecuperacao" style="display: none;">
+        <label for="nota_recuperacao">Nota da Prova de Recuperação:</label>
+        <input type="text" name="nota_recuperacao" id="nota_recuperacao" required>
+    </div>
+    <br>
+    <br>
+    <input type="button" value="Enviar" onclick="opneFnotas()">
+</form>
+ 
+<form action="/conclusão/main.js" id="formIdade" style="display: none;">
+    <label for="#">Diga sua idade:</label>
+    <br>
+    <br>
+    <input type="text" id="idade" placeholder="Ex.:22" required>
+    <br>
+    <br>
+    <input type="button" value="Enviar" onclick="openFidade()">
+</form>
+ 
+<form action="/conclusão/main.js" id="formSal" style="display: none;">
+    <label for="#">Digite Informações:</label>
+    <br>
+    <br>
+    <input type="text" placeholder="Nome" id="nome" required>
+    <br>
+    <input type="text" placeholder="Salário fixo" id="salario" required>
+    <br>
+    <input type="text" placeholder="Vendas no mês (R$)" id="vendas" required>
+    <br>
+    <br>
+    <input type="button" value="Enviar" onclick="openFsal()">
+</form>
+<form action="/conclusão/main.js" id="formPar" style="display: none;">
+    <label for="#">Insira um número</label>
+    <br>
+    <br>
+    <input type="text" placeholder="" id="numero" required> 
+    <br>
+    <br>
+    <input type="button" value="Enviar" onclick="openFpar()">
+</form>
+ 
+<form action="/conclusão/main.js" id="formVal" style="display: none;">
+    <label for="#">Escolha dois valores:</label>
+    <br>
+    <br>
+    <input type="text" placeholder="Valor 01" id="valor_01" required> 
+    <br>
+    <input type="text" placeholder="Valor 02" id="valor_02" required>
+    <br>
+    <br>
+    <input type="button" value="Enviar" onclick="openFval()">
+</form>
+ 
+<form action="/conclusão/main.js" id="formImc" style="display: none;">
+    <label for="#">Informações necessárias:</label>
+    <br>
+    <br>
+    <input type="text" placeholder="Peso" id="peso" required>
+    <br>
+    <input type="text" placeholder="Altura" id="altura" required>
+    <br>
+    <br>
+    <input type="button" value="Enviar" onclick="openFimc()">
+</form>
+
+<form action="/conclusão/main.js" id="formCusto" style="display: none;">
+    <label for="#">Informações necessárias:</label>
+    <br>
+    <br>
+    <input type="number" placeholder="Preço de Custo" id="precoCusto" size="25" required>
+    <br>
+    <input type="number" placeholder="Porcentagem de Acréscimo" id="percentualAcrescimo" size="25" required>
+    <br>
+    <br>
+    <input type="button" value="Calcular" onclick="calcularPrecoVenda()">
+</form>
+ 
+<form action="/conclusão/main.js" id="formProdutos" style="display: none;">
+    <label for="#">Digite o valor do carro:</label>
+    <br>
+    <br>
+    <input type="text" placeholder="valor" id="carro" required>
+    <br>
+    <br>
+    <input type="button" value="Enviar" onclick="openFprodutos()">
+</form>
+<script src="/conclusão/main.js"></script>
+</body>
+</html>

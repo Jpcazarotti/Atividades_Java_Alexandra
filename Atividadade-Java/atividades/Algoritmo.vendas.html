@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final do mês</title>
+</head>
+<body>
+    <script>
+        const nome = prompt("Qual é seu nome?");
+        const sf = parseFloat(prompt("Qual seu salário fixo?"));
+        const tv = parseFloat(prompt("Qual foi o valor total de todas as suas vendas esse mês?"));
+        let st = (sf + (tv*0.15));
+
+        alert("Nome:" +nome);
+        alert("Salário Fixo:" +sf);
+        alert("Salário Total:" +st);
+    </script>
+</body>
+</html>

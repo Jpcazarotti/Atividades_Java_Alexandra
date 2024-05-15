@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Final</title>
+</head>
+<body>
+    <h1>Escolha um botão</h1>
+        <button id="nts">Notas</button>
+        <button id="idd">Idade</button>
+        <button id="sl">Salário</button>
+        <button id="primpr">Par ou Ímpar</button>
+        <button id="tv">Troca de Valores</button>
+        <button id="pesoi">Peso Ideal</button>
+        <button id="imcimc">IMC</button>
+        <button id="">Custo de Produtos</button>
+
+        <form onsubmit="nts" id="nts" style="display: none;">
+            <label for="notas">*Digite a primeira nota: </label>
+            <input type="number" name="notas" id="nota" placeholder="0" required>
+            <br>
+            <label for="notas1">*Digite a segunda nota: </label>
+            <input type="number" name="notas1" id="1nota" placeholder="0" required>
+            <br>
+            <label for="notas2">*Digite a terceira nota: </label>
+            <input type="number" name="notas2" id="2nota" placeholder="0" required>
+            <br>
+            <label for="notas3">*Digite a quarta nota: </label>
+            <input type="number" name="notas3" id="3nota" placeholder="0" required>
+            <label for="notaex"></label>
+        </form>
+
+        <form onsubmit="idd" id="idd" style="display: none;">
+            <label for="idade1">Por favor, insira sua idade: </label>
+            <input type="number" name="idade1" id="idade1" required>
+        </form>
+
+        <form onsubmit="sl" style="display: none;">
+            <label for="nomefun">Qual é seu nome?</label>
+            <input type="text" name="nomefun" id="nomefun" placeholder="Digite Aqui" required>
+            <br>
+            <label for="salariofx">Qual seu salário fixo?</label>
+            <input type="text" name="salariofx" id="salariofx" placeholder="Ex.:R$1200,00" required>
+            <label for="valortt">Qual foi o valor total de todas as suas vendas esse mês?</label>
+            <input type="text" name="valortt" id="valortt" placeholder="Ex.:R$500,00" required>
+        </form>
+
+        <form onsubmit="primpr">
+            
+        </form>
+
+        <form onsubmit="tv">
+
+        </form>
+
+        <form onsubmit="pesoi">
+
+        </form>
+
+        <form onsubmit="imcimc">
+
+        </form>
+
+        <form onsubmit="custop12"></form>
+
+        <script>
+          function nts() {
+            const nota1 = parseFloat(document.getElementById("notas").value);                   
+            const nota2 = parseFloat(document.getElementById("notas1").value);                    
+            const nota3 = parseFloat(document.getElementById("notas2").value);                    
+            const nota4 = parseFloat(document.getElementById("notas3").value);
+
+            const media = (nota1 + nota2 + nota3 + nota4) / 4;
+
+          if (media>= 7.0) {
+              alert(`Aluno aprovado! Média: ${media.toFixed(2)}`);
+          } else {
+              const notaExame = parseFloat(document.getElementById("notaex").value);
+              const novaMedia = (media + notaExame) / 2;
+        
+          if (novaMedia>=5.0) {
+              alert(`Aluno aprovado em exame! Nova média: ${novaMedia.toFixed(2)}`);
+          } else {
+              alert(`Aluno reprovado! Média: ${novaMedia.toFixed(2)}`);
+          }
+        }   }
+
+        function idd() {
+              let idade = document.getElementById("idade1");     
+          if (idade === null || idade.trim() === "") {
+              alert("Por favor, insira uma idade válida.");
+          } else {
+              idade = parseInt(idade);
+              if (isNaN(idade) || idade < 0 || !Number.isInteger(idade)) {
+                 alert("Por favor, insira uma idade válida.");
+              } else {
+              if (idade >= 18) {
+                  alert("Você é maior de idade.");
+              } else {
+                  alert("Você é menor de idade.");
+              }
+              } 
+          }
+        }
+
+        function sl() {
+          const nome = prompt("Qual é seu nome?");
+          const sf = parseFloat(prompt("Qual seu salário fixo?"));
+          const tv = parseFloat(prompt("Qual foi o valor total de todas as suas vendas esse mês?"));
+          let st = (sf + (tv*0.15));
+ 
+          alert("Nome:" +nome);
+          alert("Salário Fixo:" +sf);
+          alert("Salário Total:" +st);
+        }
+
+        function primpr() {
+              let num;
+          do {
+              num = parseFloat(prompt("Digite um número inteiro:"));
+              if (Number.isInteger(num)) {
+                  parseFloat(prompt("Por favor, digite um número inteiro válido."));
+              } } while (Number.isInteger(num)); 
+              if (num % 2 === 0) {
+                  alert(`O número ${num} é par!`);
+              } else {
+                  alert(`O número ${num} é ímpar!`);
+              }
+        }
+
+        function tv() {
+              let A = parseFloat(prompt("Dê um valor para A."));
+          let B = parseFloat(prompt("Dê um segundo valor para B."));
+
+          let C = A;
+
+          A = B;
+          B = C;
+
+          alert(`O valor de A é ${A}, que anteriormente era ${C}. Já o valor de B é ${B} que anteriormente era ${A}`);
+        }
+        
+        function pesoi() {
+              const sexo = parseFloat(prompt("Se você é um homem digite 1 e se você é uma mulher digite 2?"));
+          const altura = parseFloat(prompt("Qual sua altura?"));
+    
+          const pesohomem = 72.7 * altura - 58; 
+          const pesomulher = 62.1 * altura - 44.7; 
+    
+          if (sexo === 1) { 
+              let pesoideal = pesohomem;
+              alert(`Seu peso ideal é: ${pesoideal.toFixed(2)} Kg`);
+          } else if (sexo === 2) {
+              let pesoideal = pesomulher;
+              alert(`Seu peso ideal é: ${pesoideal.toFixed(2)} Kg`);
+          } else {
+              alert("Opção inválida. Por favor, digite 1 para homem ou 2 para mulher.");
+          }
+        }
+
+        function imcimc() {
+            let peso = parseFloat(prompt("Digite seu peso em quilogramas:"));
+            let altura = parseFloat(prompt("Digite sua altura em metros:"));
+ 
+            if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
+                document.getElementById("resultado").innerText = "Por favor, insira valores válidos para peso e altura.";
+                return;
+            }
+ 
+            let imc = peso / (altura * altura);
+ 
+            let mensagem = "Seu IMC é " + imc.toFixed(2) + ". ";
+ 
+            if (imc < 18.5) {
+                mensagem += "Você está abaixo do peso.";
+            } else if (imc < 25) {
+                mensagem += "Você está com peso normal.";
+            } else if (imc < 30) {
+                mensagem += "Você está com sobrepeso.";
+            } else {
+                mensagem += "Você está obeso.";
+            }
+ 
+            document.getElementById("resultado").innerText = mensagem;
+        }
+
+        function custop() {
+              let precoCusto = document.getElementById("precoCusto").value;
+          let percentualAcrescimo = document.getElementById("percentualAcrescimo").value;
+          let precoVenda = precoCusto * (1 + percentualAcrescimo / 100);
+          document.getElementById("resultadoPrecoVenda").innerHTML = "O preço de venda do produto é: " + precoVenda;
+        }
+
+        function custop2() {
+              let custoFabrica = document.getElementById("custoFabricaCarro").value;
+          const percentualDistribuidor = 0.28; // Porcentagem do distribuidor
+          const percentualImposto = 0.04; // Porcentagem do imposto
+          let impostos = custoFabrica * percentualImposto;
+          let custoConsumidor = parseFloat(custoFabrica) + parseFloat(impostos) + parseFloat(custoFabrica * percentualDistribuidor);
+          document.getElementById("resultadoCustoConsumidor").innerHTML = "O custo ao consumidor do carro é: " + custoConsumidor;                       
+        }
+        </script>

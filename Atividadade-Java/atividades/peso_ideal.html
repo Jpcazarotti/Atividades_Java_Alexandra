@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra seu Peso Ideal</title>
+</head>
+<body>
+    <script>
+        const sexo = parseFloat(prompt("Se você é um homem digite 1 e se você é uma mulher digite 2?"));
+        const altura = parseFloat(prompt("Qual sua altura?"));
+    
+        //let pesoideal;
+    
+        const pesohomem = 72.7 * altura - 58; 
+        const pesomulher = 62.1 * altura - 44.7; 
+    
+        if (sexo === 1) {
+            //window.prompt ("Seu peso ideal é" +Médiahomem +"kg"); ERRADO
+            let pesoideal = pesohomem;
+            alert(`Seu peso ideal é: ${pesoideal.toFixed(2)} Kg`);
+        } else if (sexo === 2) {
+            //window.prompt ("Seu peso ideal é" +Médiamulher +"kg"); ERRADO
+            let pesoideal = pesomulher;
+            alert(`Seu peso ideal é: ${pesoideal.toFixed(2)} Kg`);
+        } else {
+            alert("Opção inválida. Por favor, digite 1 para homem ou 2 para mulher.");
+        }
+    </script>
+</body>
+</html>

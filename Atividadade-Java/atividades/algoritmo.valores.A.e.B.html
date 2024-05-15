@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valores</title>
+</head>
+<body>
+    <script>
+        let A = parseFloat(prompt("Dê um valor para A."));
+        let B = parseFloat(prompt("Dê um segundo valor para B."));
+
+        let C = A;
+
+        A = B;
+        B = C;
+
+        alert(`O valor de A é ${A}, que anteriormente era ${C}. Já o valor de B é ${B} que anteriormente era ${A}`);
+    </script>
+</body>
+</html>

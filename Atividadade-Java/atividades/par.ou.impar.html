@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>É Par ou Ímpar?</title>
+</head>
+<body>
+    <script>
+        let num;
+        do {
+            num = parseFloat(prompt("Digite um número inteiro:"));
+            if (Number.isInteger(num)) {
+                parseFloat(prompt("Por favor, digite um número inteiro válido."));
+            } } while (Number.isInteger(num)); 
+            if (num % 2 === 0) {
+                alert(`O número ${num} é par!`);
+            } else {
+                alert(`O número ${num} é ímpar!`);
+            }
+    </script>
+</body>
+</html>
